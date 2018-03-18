@@ -24,7 +24,7 @@ type Query {
 type Mutation {
   addAnimal(name: String!, type: String!, owned: Boolean, owner: String, foundBy: String): Animal!
   updateAnimalOwner(_id: String!): Animal!
-  register(name: String!, email: String!, password: String!): User!
+  register(name: String!, email: String!, password: String!): String!
   login(email: String!, password: String!): String!
 }
 
