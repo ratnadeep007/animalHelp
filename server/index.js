@@ -36,16 +36,16 @@ const server = new GraphQLServer({typeDefs, resolvers, context});
 
 
 server.start(options, ({port}) => {
-  // shell.exec('clear', () => {
-  //   console.log(chalk(`Server started at localhost:${port}`));
-  //   console.log('Endpoints:');
-  //   console.log(`Graphql endpoint at \\graphql`);
-  //   console.log(`Graphql Playground endpoint at \\playground`);
-  //   console.log(' ');
-  //   require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-  //     console.log(chalk(`Server started at ${add}:${port}`));
-  //     console.log(`Graphql endpoint at ${add}:${port}\\graphql`);
-  //     console.log(`Graphql Playground endpoint at ${add}:${port}\\playground`);
-  //   });
-  // })
+  shell.exec('clear', () => {
+    console.log(chalk(`Server started at localhost:${port}`));
+    console.log('Endpoints:');
+    console.log(`Graphql endpoint at \\graphql`);
+    console.log(`Graphql Playground endpoint at \\playground`);
+    console.log(' ');
+    require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+      console.log(chalk(`Server started at ${add}:${port}`));
+      console.log(`Graphql endpoint at ${add}:${port}\\graphql`);
+      console.log(`Graphql Playground endpoint at ${add}:${port}\\playground`);
+    });
+  })
 });
