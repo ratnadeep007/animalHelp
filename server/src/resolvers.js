@@ -90,7 +90,8 @@ export default {
 };
 
 function getUserId(ctx) {
-  const Authorization = ctx.request.get('Authorization')
+  console.log(ctx);
+  const Authorization = ctx.request.get('Authorization'); 
   if(Authorization) {
     const token  = Authorization.replace('Bearer ', '')
     const user = jwt.verify(token, ctx.SECRET)

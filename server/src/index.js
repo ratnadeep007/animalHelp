@@ -9,7 +9,11 @@ import { animalSchema, userSchema } from './dbSchema';
 const chalk = require('chalk').bgGreen.black;
 import shell from 'shelljs';
 
-mongoose.connect("mongodb://localhost/test");
+// For local development
+mongoose.connect("mongodb://localhost/test"); 
+
+// For docker
+// mongoose.connect("mongodb://mongo:27017");
 
 const SECRET = "youmustnottellanyoneyoursecrets";
 
@@ -17,7 +21,7 @@ const Animal = mongoose.model('Animal', animalSchema);
 const User = mongoose.model('User', userSchema);
 
 const options = {
-  port: 4000,
+  port: 3000,
   endpoint: '/graphql',
   playground: '/playground'
 }
@@ -33,7 +37,6 @@ const context = async ({request}) => {
 };
 
 const server = new GraphQLServer({typeDefs, resolvers, context});
-
 
 server.start(options, ({port}) => {
   shell.exec('clear', () => {
