@@ -11,7 +11,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { AUTH_TOKEN } from './components/constants';
 
-const httpLink = new HttpLink({ uri: 'http://13.232.45.216/graphql' })
+const httpLink = new HttpLink({ uri: 'https://server-ryotnwpykc.now.sh/graphql' })
 
 const middlewareAuthLink = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem(AUTH_TOKEN)
