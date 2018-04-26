@@ -3,6 +3,7 @@ import Link from './Link';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Row } from 'reactstrap';
+import { HashLoader, RingLoader } from 'react-spinners';
 
 const animalQuery = gql`
     query allAnimals {
@@ -18,7 +19,11 @@ const animalQuery = gql`
 class LinkList extends Component {
     render() {
         if(this.props.data && this.props.data.loading) {
-            return <div>Loading</div>
+            return (
+                <div className="container">
+                    <RingLoader size="100" />
+                </div>
+            )
         }
         if(this.props.data && this.props.data.error) {
             return <div>Error</div>
