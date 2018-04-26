@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Link from './Link';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import { Row } from 'reactstrap';
 
 const animalQuery = gql`
     query allAnimals {
@@ -9,6 +10,7 @@ const animalQuery = gql`
             _id
             name
             type
+            foundBy
         }
     }
 `;
@@ -23,8 +25,20 @@ class LinkList extends Component {
         }
         const animalsToRender = this.props.data.allAnimals;
         return (
-            <div>{animalsToRender.map(animal => <Link key={animal._id} allAnimals={animal} />)}</div>
+            <Row>
+                <div style={styles.container} className="container">
+                    {animalsToRender.map(animal => 
+                        <Link key={animal._id} allAnimals={animal} />
+                    )}
+                </div>
+            </Row>
         )
+    }
+}
+
+const styles = {
+    container: {
+        marginTop: 20,
     }
 }
 

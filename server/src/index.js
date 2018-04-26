@@ -10,10 +10,13 @@ const chalk = require('chalk').bgGreen.black;
 import shell from 'shelljs';
 
 // For local development
-mongoose.connect("mongodb://localhost/test"); 
+// mongoose.connect("mongodb://localhost/test"); 
 
 // For docker
-// mongoose.connect("mongodb://mongo:27017");
+// mongoose.connect("mongodb://mongo:27017/test");
+
+// For mongo atlas
+mongoose.connect("mongodb://ronnie:ratnadeep@cluster0-shard-00-00-itdq6.mongodb.net:27017,cluster0-shard-00-01-itdq6.mongodb.net:27017,cluster0-shard-00-02-itdq6.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin")
 
 const SECRET = "youmustnottellanyoneyoursecrets";
 
