@@ -6,7 +6,7 @@
   "author": "Ratnadeep Bhattacharyya",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^2.0.1",
     "chalk": "^2.3.2",
     "graphql-yoga": "^1.5.2",
     "jsonwebtoken": "^8.2.0",
